@@ -1,0 +1,8 @@
+# P-2: webOS 4.x ≈ Chromium 53 is the hard floor for the legacy build.
+# TODO(P-2): verify Tizen→Chromium and webOS→Chromium version mappings
+# against current Samsung/LG developer docs before citing them in the README.
+Chrome >= 53
+ChromeAndroid >= 53
+Firefox >= 60
+Safari >= 11
+Edge >= 79

@@ -1,0 +1,17 @@
+/* Real density-scoped stylesheets land in M1 (packages/tokens' Style
+   Dictionary build). This exists only so the CSS size-limit gate has
+   something real to measure from week 1. */
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #0b0b12;
+  color: #eaeaea;
+}

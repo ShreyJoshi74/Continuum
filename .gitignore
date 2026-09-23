@@ -1,0 +1,15 @@
+node_modules/
+dist/
+build/
+storybook-static/
+.turbo/
+.vite/
+coverage/
+*.log
+.env
+.env.local
+.DS_Store
+playwright-report/
+test-results/
+.lighthouseci/
+Shrey-Joshi.pdf

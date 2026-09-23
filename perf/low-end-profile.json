@@ -1,0 +1,18 @@
+{
+  "description": "The single low-end device profile every performance budget in this repo is measured against. See NFR-03, NFR-04, NFR-05 in docs/BRD-TRD.md.",
+  "cpu": {
+    "throttlingMethod": "devtools",
+    "cpuSlowdownMultiplier": 6
+  },
+  "network": {
+    "downloadThroughputKbps": 1600,
+    "uploadThroughputKbps": 750,
+    "rttMs": 150
+  },
+  "viewport": {
+    "width": 1280,
+    "height": 720,
+    "deviceScaleFactor": 1
+  },
+  "density": "tv"
+}

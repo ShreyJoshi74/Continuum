@@ -1,0 +1,35 @@
+{
+  "ci": {
+    "collect": {
+      "staticDistDir": "./packages/app/dist",
+      "url": ["http://localhost/index.html?density=tv"],
+      "numberOfRuns": 3,
+      "settings": {
+        "formFactor": "desktop",
+        "throttlingMethod": "devtools",
+        "throttling": {
+          "cpuSlowdownMultiplier": 6,
+          "downloadThroughputKbps": 1600,
+          "uploadThroughputKbps": 750,
+          "rttMs": 150
+        },
+        "screenEmulation": {
+          "width": 1280,
+          "height": 720,
+          "deviceScaleFactor": 1,
+          "mobile": false
+        }
+      }
+    },
+    "assert": {
+      "aggregationMethod": "median-run",
+      "assertions": {
+        "categories:performance": ["warn", { "minScore": 0.7 }],
+        "total-byte-weight": "off"
+      }
+    },
+    "upload": {
+      "target": "temporary-public-storage"
+    }
+  }
+}
