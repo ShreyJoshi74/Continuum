@@ -1,7 +1,7 @@
 # Benchmark: M0 baseline (empty page)
 
 - **Date:** 2026-09-23
-- **Commit SHA:** _recorded at the M0 commit that introduces this file (see `git log -- benchmarks/2026-wk01-baseline.md`)_
+- **Commit SHA:** `4a819f5`
 - **Profile file hash:** `413dae86d22e0b22feb3db2f3ba166aee9b60234` (`sha1sum perf/low-end-profile.json`)
 - **Reproduce with:**
   ```bash
