@@ -28,14 +28,13 @@ Following [`docs/IMPLEMENTATION_PLAN.md`](docs/IMPLEMENTATION_PLAN.md). Currentl
 
 ## Setup
 
-Requires Node ≥ 18.17 and [pnpm](https://pnpm.io/).
+Requires Node ≥ 20 (Playwright's minimum) and [pnpm](https://pnpm.io/).
 
 ```bash
 pnpm install
 
-# Populate the catalogue snapshot (needs a free TMDB API key — see
-# packages/bff/.env.example). Until you have one, a synthetic placeholder
-# snapshot is already committed so the app runs out of the box.
+# A real TMDB-sourced snapshot is already committed (packages/bff/data/snapshot.json).
+# To refresh it, get a free key at https://www.themoviedb.org/settings/api, then:
 TMDB_API_KEY=xxxx pnpm --filter @continuum/bff run fetch-snapshot
 
 # Run the BFF and the app together

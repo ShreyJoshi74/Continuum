@@ -28,7 +28,7 @@ Locked before any code was written, per IMPLEMENTATION_PLAN.md's pre-flight tabl
 
 **Why:** The DOM-node budget (NFR-06, ≤ 1,500 steady-state nodes) is only a meaningful claim at a stated catalogue size — "virtualized 800 card slots down to ~60 rendered" only means something if the 800 is fixed and never silently changes.
 
-**Status:** `packages/bff/src/fetch-snapshot.ts` is the real fetch script (needs `TMDB_API_KEY`, see `packages/bff/.env.example`). Until a key is provisioned, `packages/bff/data/snapshot.json` holds a synthetic placeholder with the same shape (20 rails × 40 items, ~515 unique ids) so the rest of M0's harness can be exercised end to end. Swap it for a real TMDB pull before any benchmark numbers are recorded — synthetic data does not belong in a committed bullet.
+**Status:** `packages/bff/data/snapshot.json` now holds a real TMDB pull via `packages/bff/src/fetch-snapshot.ts` — 20 rails × 40 items, 476 unique titles, real posters/backdrops. (An earlier synthetic placeholder was used to exercise the harness before a TMDB key was provisioned; it's gone now.) The fetch script talks to TMDB over `node:https` rather than the built-in `fetch` (undici) — undici hit `ECONNRESET` on this network even though plain HTTPS requests to the same host succeeded, a known class of issue with TLS-inspecting proxies/AV. Re-run `pnpm --filter @continuum/bff run fetch-snapshot` with `TMDB_API_KEY` set to refresh the snapshot later.
 
 ## P-5 — HLS test stream: Mux
 

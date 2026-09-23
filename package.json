@@ -5,7 +5,7 @@
   "description": "Continuum — Cross-Surface Streaming UI (Web + Smart TV)",
   "type": "module",
   "engines": {
-    "node": ">=18.17.0"
+    "node": ">=20.0.0"
   },
   "packageManager": "pnpm@12.5.1",
   "scripts": {

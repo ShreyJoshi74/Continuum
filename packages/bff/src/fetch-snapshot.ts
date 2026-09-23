@@ -9,8 +9,36 @@
  * Usage: TMDB_API_KEY=xxxx pnpm --filter @continuum/bff run fetch-snapshot
  */
 import { writeFile } from "node:fs/promises";
+import https from "node:https";
 import path from "node:path";
 import type { CardItem, HomePage, Rail } from "./types.js";
+
+// Node's built-in fetch (undici) hits ECONNRESET on some local networks
+// (TLS-inspecting proxies/antivirus) even though plain https requests and
+// curl succeed against the same host. Falling back to node:https sidesteps it.
+function httpsGetJson<T>(url: string): Promise<T> {
+  return new Promise((resolve, reject) => {
+    https
+      .get(url, (res) => {
+        if (res.statusCode && res.statusCode >= 400) {
+          reject(new Error(`TMDB request failed (${res.statusCode}): ${url.split("api_key=")[0]}...`));
+          res.resume();
+          return;
+        }
+        let data = "";
+        res.setEncoding("utf-8");
+        res.on("data", (chunk) => (data += chunk));
+        res.on("end", () => {
+          try {
+            resolve(JSON.parse(data) as T);
+          } catch (err) {
+            reject(err);
+          }
+        });
+      })
+      .on("error", reject);
+  });
+}
 
 const TMDB_API_KEY = process.env.TMDB_API_KEY;
 const TMDB_BASE = "https://api.themoviedb.org/3";
@@ -54,11 +82,7 @@ interface TmdbMovie {
 
 async function fetchGenrePage(genreId: number, page: number): Promise<TmdbMovie[]> {
   const url = `${TMDB_BASE}/discover/movie?api_key=${TMDB_API_KEY}&with_genres=${genreId}&sort_by=popularity.desc&page=${page}`;
-  const res = await fetch(url);
-  if (!res.ok) {
-    throw new Error(`TMDB request failed (${res.status}): ${url.replace(TMDB_API_KEY!, "***")}`);
-  }
-  const body = (await res.json()) as { results: TmdbMovie[] };
+  const body = await httpsGetJson<{ results: TmdbMovie[] }>(url);
   return body.results;
 }
 
