@@ -1,0 +1,62 @@
+/*
+ * Focusable-first (§9 rule 4). On TV the focused card is the only thing the
+ * eye is on, so its state is authored first: a scale transform plus an
+ * outer glow — not a thicker border, per the density files' own comment on
+ * border/focus-ring scaling. --border-focus-scale is barely different
+ * between densities (1.03 -> 1.06); the glow radius (--border-focus-glow)
+ * does most of the perceptual work at TV distance.
+ */
+.card:focus-visible {
+  outline: none;
+  transform: scale(var(--border-focus-scale));
+  box-shadow: var(--border-focus-glow);
+  z-index: 1;
+}
+
+.card {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-card);
+  background: var(--color-surface-raised);
+  overflow: hidden;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  transition: transform var(--timing-fast), box-shadow var(--timing-fast);
+}
+
+.card--landscape {
+  aspect-ratio: 16 / 9;
+}
+
+.card--portrait {
+  aspect-ratio: 2 / 3;
+}
+
+.card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__badges {
+  position: absolute;
+  top: var(--space-1);
+  left: var(--space-1);
+  display: flex;
+  gap: var(--space-1);
+}
+
+.card__title {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: var(--space-2);
+  font-size: calc(var(--type-base) * 0.9);
+  color: var(--color-text);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+}

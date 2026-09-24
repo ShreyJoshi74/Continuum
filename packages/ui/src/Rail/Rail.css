@@ -1,0 +1,32 @@
+/* No focus state of its own — a rail is a layout container; individual
+   cards inside it are the focus targets. */
+
+.rail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.rail__track {
+  display: flex;
+  gap: var(--space-3);
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-inline: var(--safe-inset-inline);
+  /* Hide the scrollbar without disabling scroll — a remote has no cursor
+     to grab one with, and on desktop the rail's own affordance is enough. */
+  scrollbar-width: none;
+}
+
+.rail__track::-webkit-scrollbar {
+  display: none;
+}
+
+.rail__item {
+  flex: 0 0 auto;
+  /* A placeholder width — M2's window calculator computes the real fixed
+     card size arithmetically from tokens.ts, which is also what makes the
+     virtualization math exact (no measurement in the hot path). */
+  width: calc(var(--type-base) * 12);
+}

@@ -1,0 +1,9 @@
+{
+  "comment": "The app's default theme — matches the existing dark background.",
+  "color": {
+    "surface": { "value": "#141414" },
+    "surfaceRaised": { "value": "#1f1f1f" },
+    "text": { "value": "#eaeaea" },
+    "textMuted": { "value": "#a0a0a0" }
+  }
+}

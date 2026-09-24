@@ -1,0 +1,25 @@
+{
+  "comment": "Desktop/tablet, ~60cm viewing distance.",
+  "type": {
+    "base": { "value": "16px" },
+    "scale": { "value": "1.25" }
+  },
+  "space": {
+    "1": { "value": "4px" },
+    "2": { "value": "8px" },
+    "3": { "value": "16px" },
+    "4": { "value": "24px" },
+    "5": { "value": "32px" }
+  },
+  "border": {
+    "width": { "value": "1px" },
+    "focusWidth": { "value": "2px" },
+    "focusOffset": { "value": "2px" },
+    "focusGlow": { "value": "0 0 0 3px rgba(229, 9, 20, 1)" },
+    "focusScale": { "value": "1.04" }
+  },
+  "safeInset": {
+    "block": { "value": "0px" },
+    "inline": { "value": "0px" }
+  }
+}

@@ -11,7 +11,7 @@
   "scripts": {
     "build": "pnpm -r run build",
     "test": "pnpm -r run test",
-    "lint": "eslint packages e2e --ext .ts,.tsx",
+    "lint": "eslint packages e2e --ext .ts,.tsx && node scripts/check-css-no-raw-px.mjs",
     "format": "prettier --check .",
     "typecheck": "pnpm -r run typecheck",
     "dev": "pnpm --filter @continuum/app run dev",

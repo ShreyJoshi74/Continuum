@@ -1,8 +1,9 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "dist",
-    "rootDir": "src",
+    // No outDir/rootDir: this project only type-checks (noEmit) — Vite does
+    // the actual bundling — and app/src imports source files from sibling
+    // workspace packages, which rootDir would otherwise reject.
     "jsx": "react-jsx",
     "noEmit": true
   },

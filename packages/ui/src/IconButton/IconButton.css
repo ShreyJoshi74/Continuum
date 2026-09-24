@@ -1,0 +1,27 @@
+/* Focusable-first (§9 rule 4): same shared focus-ring treatment as Button
+   (see FocusRing.css). A square icon target scales with --type-base so the
+   tap/click target grows on TV the same way text does. */
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--type-base) * 2);
+  height: calc(var(--type-base) * 2);
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-control);
+  background: var(--color-surface-raised);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background-color var(--timing-fast);
+}
+
+.icon-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.icon-btn svg {
+  width: 60%;
+  height: 60%;
+}

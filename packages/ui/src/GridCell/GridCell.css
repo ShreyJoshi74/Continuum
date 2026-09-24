@@ -1,0 +1,6 @@
+/* No layout of its own — the grid container (genre browse, M5) supplies
+   columns/gap; a cell just makes sure its content fills the track. */
+
+.grid-cell {
+  width: 100%;
+}

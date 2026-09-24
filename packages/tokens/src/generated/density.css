@@ -1,0 +1,81 @@
+/* GENERATED FILE — do not edit by hand.
+ * Source: packages/tokens/tokens/*.json
+ * Regenerate: pnpm --filter @continuum/tokens run build:tokens */
+
+:root {
+  --color-brand: #e50914;
+  --color-on-brand: #ffffff;
+  --radius-card: 8px;
+  --radius-control: 6px;
+  --radius-pill: 999px;
+  --z-index-modal: 1000;
+  --z-index-focus-ring: 10;
+  --timing-fast: 120ms;
+  --timing-normal: 200ms;
+  --timing-slow: 320ms;
+}
+
+[data-density="compact"] {
+  --type-base: 14px;
+  --type-scale: 1.2;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --border-width: 1px;
+  --border-focus-width: 2px;
+  --border-focus-offset: 2px;
+  --border-focus-glow: 0 0 0 2px rgba(229, 9, 20, 1);
+  --border-focus-scale: 1.03;
+  --safe-inset-block: 0px;
+  --safe-inset-inline: 0px;
+}
+
+[data-density="comfortable"] {
+  --type-base: 16px;
+  --type-scale: 1.25;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --border-width: 1px;
+  --border-focus-width: 2px;
+  --border-focus-offset: 2px;
+  --border-focus-glow: 0 0 0 3px rgba(229, 9, 20, 1);
+  --border-focus-scale: 1.04;
+  --safe-inset-block: 0px;
+  --safe-inset-inline: 0px;
+}
+
+[data-density="tv"] {
+  --type-base: 28px;
+  --type-scale: 1.15;
+  --space-1: 12px;
+  --space-2: 20px;
+  --space-3: 32px;
+  --space-4: 48px;
+  --space-5: 64px;
+  --border-width: 1px;
+  --border-focus-width: 2px;
+  --border-focus-offset: 2px;
+  --border-focus-glow: 0 0 0 8px rgba(229, 9, 20, 1);
+  --border-focus-scale: 1.06;
+  --safe-inset-block: 5%;
+  --safe-inset-inline: 5%;
+}
+
+[data-theme="light"] {
+  --color-surface: #ffffff;
+  --color-surface-raised: #f0f0f0;
+  --color-text: #141414;
+  --color-text-muted: #5c5c5c;
+}
+
+[data-theme="dark"] {
+  --color-surface: #141414;
+  --color-surface-raised: #1f1f1f;
+  --color-text: #eaeaea;
+  --color-text-muted: #a0a0a0;
+}

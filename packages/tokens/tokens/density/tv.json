@@ -1,0 +1,25 @@
+{
+  "comment": "10-foot TV, ~3m viewing distance. Bigger type base but a TIGHTER step ratio than comfortable (1.15 < 1.25) — large relative jumps look extreme on an already-huge screen. Spacing grows faster than type (space.3 is 2.67x compact's vs type.base at 2x) because grouping must read before content at this distance. Border width and radius are deliberately left near-identical to the other two files — TV gets an outer glow for focus visibility, not a thicker line.",
+  "type": {
+    "base": { "value": "28px" },
+    "scale": { "value": "1.15" }
+  },
+  "space": {
+    "1": { "value": "12px" },
+    "2": { "value": "20px" },
+    "3": { "value": "32px" },
+    "4": { "value": "48px" },
+    "5": { "value": "64px" }
+  },
+  "border": {
+    "width": { "value": "1px" },
+    "focusWidth": { "value": "2px" },
+    "focusOffset": { "value": "2px" },
+    "focusGlow": { "value": "0 0 0 8px rgba(229, 9, 20, 1)" },
+    "focusScale": { "value": "1.06" }
+  },
+  "safeInset": {
+    "block": { "value": "5%" },
+    "inline": { "value": "5%" }
+  }
+}

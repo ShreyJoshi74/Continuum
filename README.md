@@ -24,7 +24,7 @@ See [`docs/dfd/level-0.md`](docs/dfd/level-0.md) and [`docs/dfd/level-1.md`](doc
 
 ## Status
 
-Following [`docs/IMPLEMENTATION_PLAN.md`](docs/IMPLEMENTATION_PLAN.md). Currently: **M0 — Foundations and the measurement harness.**
+Following [`docs/IMPLEMENTATION_PLAN.md`](docs/IMPLEMENTATION_PLAN.md). **M1 — The token and density system — complete.** All 15 planned components (Button, IconButton, Badge, Card, Rail, RailHeader, Skeleton, Spinner, ProgressBar, EmptyState, FocusRing, SafeArea, GridCell, TextField, Modal) render identically at compact/comfortable/tv density and light/dark theme from one token source (`packages/tokens`), with zero per-surface branches, a blocking `no-raw-px` lint gate, and a WCAG AA contrast suite. Currently starting: **M2 — The virtualized rail renderer.**
 
 ## Setup
 
@@ -42,7 +42,13 @@ pnpm --filter @continuum/bff run dev
 pnpm dev
 ```
 
-Open `http://localhost:5173`. Append `?density=tv` to preview the TV density mode.
+Open `http://localhost:5173`. Append `?density=tv|compact|comfortable` and/or `?theme=light|dark` to override what would otherwise be auto-detected from the viewport/pointer/user-agent and the OS color-scheme preference.
+
+To browse the component library in isolation, with a toolbar to flip through all 3 densities × 2 themes per component:
+
+```bash
+pnpm --filter @continuum/ui run storybook
+```
 
 ### Tests and gates
 

@@ -1,0 +1,9 @@
+/* Text only, no focus state — nothing here is a target. */
+
+.rail-header {
+  margin: 0 0 var(--space-2) 0;
+  padding-inline: var(--safe-inset-inline);
+  font-size: calc(var(--type-base) * var(--type-scale));
+  font-weight: 600;
+  color: var(--color-text);
+}

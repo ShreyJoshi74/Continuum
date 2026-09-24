@@ -1,0 +1,28 @@
+{
+  "comment": "Phone, ~35cm viewing distance. Baseline curve — the other two density files are tuned relative to this one, not computed from it.",
+  "type": {
+    "base": { "value": "14px" },
+    "scale": { "value": "1.2" }
+  },
+  "space": {
+    "1": { "value": "4px" },
+    "2": { "value": "8px" },
+    "3": { "value": "12px" },
+    "4": { "value": "16px" },
+    "5": { "value": "24px" }
+  },
+  "border": {
+    "width": { "value": "1px" },
+    "focusWidth": { "value": "2px" },
+    "focusOffset": { "value": "2px" },
+    "focusGlow": {
+      "value": "0 0 0 2px rgba(229, 9, 20, 1)",
+      "comment": "Brand-colored (#e50914's RGB), not white — a white glow at any alpha fails contrast against the light theme's white surface (contrast.test.ts caught this: ratio of exactly 1, i.e. invisible)."
+    },
+    "focusScale": { "value": "1.03" }
+  },
+  "safeInset": {
+    "block": { "value": "0px" },
+    "inline": { "value": "0px" }
+  }
+}

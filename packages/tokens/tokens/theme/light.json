@@ -1,0 +1,9 @@
+{
+  "comment": "Same component markup, same spacing/type tokens — only these four color values change. This is what 'orthogonal token swap' means: no component needs to know a light theme exists.",
+  "color": {
+    "surface": { "value": "#ffffff" },
+    "surfaceRaised": { "value": "#f0f0f0" },
+    "text": { "value": "#141414" },
+    "textMuted": { "value": "#5c5c5c" }
+  }
+}

@@ -1,0 +1,4 @@
+.safe-area {
+  padding-block: var(--safe-inset-block);
+  padding-inline: var(--safe-inset-inline);
+}

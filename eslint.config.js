@@ -19,10 +19,12 @@ export default tseslint.config(
     },
   },
   {
+    // Blocking in M1 (§9 rule 1) — tokens now exist (packages/tokens) to
+    // point authors at instead of a literal px value.
     files: ["packages/ui/**/*.{ts,tsx}"],
     plugins: { continuum },
     rules: {
-      "continuum/no-raw-px": "warn",
+      "continuum/no-raw-px": "error",
     },
   }
 );

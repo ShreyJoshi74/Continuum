@@ -1,0 +1,39 @@
+/*
+ * Focusable-first authoring (§9 rule 4): the focus treatment comes first,
+ * conceptually, even though the rule itself now lives in FocusRing.css
+ * (shared with IconButton) — because on TV the focused button is the one
+ * the user is looking at. Every dimension below is a token from
+ * @continuum/tokens — none of them mention density, because density is
+ * what data-density on <html> already selects for us.
+ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-control);
+  font-size: var(--type-base);
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color var(--timing-fast), color var(--timing-fast);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.btn--primary {
+  background: var(--color-brand);
+  /* --color-on-brand, not --color-text: text on the brand color needs its
+     own guaranteed-AA color independent of theme (contrast.test.ts). */
+  color: var(--color-on-brand);
+}
+
+.btn--secondary {
+  background: var(--color-surface-raised);
+  color: var(--color-text);
+}

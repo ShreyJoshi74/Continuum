@@ -1,6 +1,6 @@
-/* Real density-scoped stylesheets land in M1 (packages/tokens' Style
-   Dictionary build). This exists only so the CSS size-limit gate has
-   something real to measure from week 1. */
+/* M1: background/text now come from @continuum/tokens' theme variables
+   (density.css), not a hardcoded dark palette — this file only sets the
+   things that aren't a token concern (box-sizing, font stack). */
 :root {
   color-scheme: dark;
 }
@@ -12,6 +12,6 @@
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
-  background: #0b0b12;
-  color: #eaeaea;
+  background: var(--color-surface);
+  color: var(--color-text);
 }

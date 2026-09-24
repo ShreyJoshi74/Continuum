@@ -1,0 +1,12 @@
+/*
+ * The one shared outline-based focus treatment. Button and IconButton both
+ * use it as-is; Card deliberately does NOT (it uses a scale transform +
+ * glow instead, per the density files' own comment on border/focus-ring
+ * scaling) — that's a real divergence, not an oversight, so Card keeps its
+ * own :focus-visible block rather than being forced through this class.
+ */
+.focus-ring:focus-visible {
+  outline: var(--border-focus-width) solid var(--color-brand);
+  outline-offset: var(--border-focus-offset);
+  box-shadow: var(--border-focus-glow);
+}

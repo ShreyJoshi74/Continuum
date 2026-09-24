@@ -1,0 +1,24 @@
+{
+  "comment": "Brand color is the one color constant across light AND dark — everything that changes between themes (surface, text) lives in theme/{light,dark}.json instead.",
+  "color": {
+    "brand": { "value": "#e50914" },
+    "onBrand": {
+      "value": "#ffffff",
+      "comment": "Text/icons drawn on top of the brand color need their own guarantee, independent of theme — reusing theme.text failed AA against brand red in both themes (contrast.test.ts caught it: 3.84:1 light, 3.98:1 dark, both below the 4.5:1 minimum)."
+    }
+  },
+  "radius": {
+    "card": { "value": "8px", "comment": "Corner rounding is a brand shape, not a distance function — near-identical across density/*.json on purpose." },
+    "control": { "value": "6px" },
+    "pill": { "value": "999px" }
+  },
+  "zIndex": {
+    "modal": { "value": "1000" },
+    "focusRing": { "value": "10" }
+  },
+  "timing": {
+    "fast": { "value": "120ms" },
+    "normal": { "value": "200ms" },
+    "slow": { "value": "320ms" }
+  }
+}
